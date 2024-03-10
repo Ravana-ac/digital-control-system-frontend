@@ -1,0 +1,9 @@
+node_modules
+dist
+.vscode
+.firebase
+.exlintre.cjs
+.firebaserc
+.prettierrc
+firebase.json
+README.md
