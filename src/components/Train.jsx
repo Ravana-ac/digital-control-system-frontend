@@ -14,12 +14,24 @@ const Train = () => {
   const [center, setCenter] = useState([8.06012, 80.273583])
 
   useEffect(() => {
-    socket.on('receve_message', (msg) => {
+    const sendLocationRequest = () => {
+      socket.emit('location-request', { id: 10 })
+    }
+
+    const intervalId = setInterval(sendLocationRequest, 5000)
+
+    socket.on('receve-message', (msg) => {
       console.log(msg)
       const position = [msg.lat, msg.lon]
       setCenter(position)
     })
+
+    return () => {
+      clearInterval(intervalId)
+      socket.disconnect()
+    }
   }, [socket, center])
+
   return (
     <>
       <div className='animated-fade-in'>
