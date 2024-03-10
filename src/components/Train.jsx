@@ -8,7 +8,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 
-const socket = io.connect('http://149.28.148.239:5000/socket.io')
+const socket = io.connect('http://149.28.148.239:5000', { path: '/socket.io' })
 
 const Train = () => {
   const [center, setCenter] = useState([8.06012, 80.273583])
