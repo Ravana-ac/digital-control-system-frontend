@@ -2,24 +2,24 @@ import { Container } from 'react-bootstrap'
 import '../App.css'
 import NavBar from './Navbar'
 
-// import { io } from 'socket.io-client'
+import { io } from 'socket.io-client'
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 
-// const socket = io.connect('http://localhost:5000')
+const socket = io.connect('http://localhost:5000')
 
 const Train = () => {
   const [center, setCenter] = useState([8.06012, 80.273583])
 
-  // useEffect(() => {
-  //   socket.on('receve_message', (msg) => {
-  //     console.log(msg)
-  //     const position = [msg.lat, msg.lon]
-  //     setCenter(position)
-  //   })
-  // }, [socket, center])
+  useEffect(() => {
+    socket.on('receve_message', (msg) => {
+      console.log(msg)
+      const position = [msg.lat, msg.lon]
+      setCenter(position)
+    })
+  }, [socket, center])
   return (
     <>
       <div className='animated-fade-in'>
