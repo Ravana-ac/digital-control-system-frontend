@@ -23,10 +23,10 @@ const Train = () => {
 
     socket.on('receve-message', (msg) => {
       if (msg) {
+        console.log(msg)
         const position = [msg.lat, msg.lon]
         setCenter(position)
       }
-      console.log(msg)
     })
   }, [socket, center])
 
