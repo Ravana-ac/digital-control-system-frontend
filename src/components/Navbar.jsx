@@ -26,6 +26,9 @@ const NavBar = () => {
               <Nav.Link as={Link} to='/track' className='nav-link-custom'>
                 Track
               </Nav.Link>
+              <Nav.Link as={Link} to='/login' className='nav-link-custom'>
+                Login
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
