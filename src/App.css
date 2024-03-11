@@ -77,3 +77,54 @@
 .animated-fade-in {
   animation: 2.5s ease-out 0s 1 fadeIn;
 }
+
+.sign-box {
+  padding: 15px;
+}
+
+
+.login-box {
+  padding: 15px;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+.stylish-shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+  border: none;
+}
+
+
+.custom-heading {
+  color: #007bff;
+
+  font-weight: 500;
+}
+
+
+.custom-btn {
+  background-color: #007bff;
+
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+
+}
+
+
+.custom-link {
+  color: #007bff;
+  transition: color 0.2s ease-in-out;
+}
+
+.custom-link:hover {
+  color: #0056b3;
+
+}
