@@ -8,7 +8,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 
-const socket = io.connect('http://149.28.148.239:5000/', {
+const socket = io.connect('http://172.20.10.8:5000/', {
   path: '/socket.io',
 })
 

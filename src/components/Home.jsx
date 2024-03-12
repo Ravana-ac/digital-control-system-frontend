@@ -109,7 +109,7 @@ const Home = () => {
                   >
                     <Card.Img
                       variant='top'
-                      src='dulitha.JPG'
+                      src='dulitha.jpg'
                       style={{ height: '28rem', objectFit: 'cover' }}
                     />
                     <Card.Body>
@@ -179,7 +179,7 @@ const Home = () => {
                   >
                     <Card.Img
                       variant='top'
-                      src='nipuna.jpeg'
+                      src='nipuna.jpg'
                       style={{ height: '28rem', objectFit: 'cover' }}
                     />
                     <Card.Body>
@@ -250,7 +250,7 @@ const Home = () => {
                   >
                     <Card.Img
                       variant='top'
-                      src='hasith.jpeg'
+                      src='hasith.jpg'
                       style={{ height: '28rem', objectFit: 'cover' }}
                     />
                     <Card.Body>
@@ -283,7 +283,7 @@ const Home = () => {
                   >
                     <Card.Img
                       variant='top'
-                      src='sandalu.jpeg'
+                      src='sandalu.jpg'
                       style={{ height: '28rem', objectFit: 'cover' }}
                     />
                     <Card.Body>
