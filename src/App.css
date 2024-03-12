@@ -1,3 +1,13 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+body {
+  background-color: #e5f0ff94;
+}
+
+
 #hero-text {
   font-size: 26px;
 }
@@ -9,7 +19,7 @@
 
 .nav-title:hover {
   transition: 0.5s;
-  color: #ffcc00;
+  color: #2C8954;
 }
 
 .nav-link-custom {
@@ -19,7 +29,7 @@
 
 .nav-link-custom:hover {
   transition: 0.5s;
-  color: #ffcc00 !important;
+  color: #2C8954 !important;
 
 }
 
@@ -28,36 +38,12 @@
   background-color: rgb(255, 255, 255);
 }
 
-.header-title {
-
-  margin-bottom: 30px;
-  font-size: 70px;
-
-}
-
-.header-content {
-  font-size: 23px;
-  font-weight: 500;
-  text-align: justify;
-
-}
 
 .track-bttn {
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
-.mission-title {
-  font-size: 70px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.mission-content {
-  font-size: 23px;
-  font-weight: 500;
-  text-align: justify;
-}
 
 
 
@@ -75,7 +61,7 @@
 
 
 .animated-fade-in {
-  animation: 2.5s ease-out 0s 1 fadeIn;
+  animation: 1.5s ease-out 0s 1 fadeIn;
 }
 
 .sign-box {
@@ -139,4 +125,113 @@
 
 #custom-form-control input {
   border: 1px solid #000000;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #198A61;
+  padding: 20px;
+}
+
+#member-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+
+}
+
+.header-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+.header-content {
+  font-size: 23px;
+  font-weight: 500;
+  text-align: justify;
+
+}
+
+#hero-section {
+  height: 90vh;
+  background: linear-gradient(120deg, #2b5876 0%, #4e4376 100%);
+  color: #ffffff;
+
+
+}
+
+
+
+
+
+#hero-section h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 80px;
+  padding-top: 200px;
+  margin-bottom: 80px;
+}
+
+.Features-section {
+  background-color: #E5F0FF;
+  padding-bottom: 30px;
+
+}
+
+.Features-section h1 {
+  margin-bottom: 70px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.Features-section h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.Features-section p {
+  margin-top: 20px;
+  font-size: 18px;
+
+}
+
+.Features-content {
+  background-color: #F6FAFF;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.Features-content:hover {
+  transition: 0.25s;
+  background-color: #2C8954;
+  color: #F6FAFF;
+}
+
+
+.FAQ-section h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.FAQ-section h3 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.faq-section {
+  background-color: #E5F0FF;
+  padding-bottom: 50px;
+}
+
+.accordion-body {
+  background-color: #f7fbff;
+}
+
+.footer-section h5 {
+  font-size: 30px;
+  font-weight: bold;
 }
