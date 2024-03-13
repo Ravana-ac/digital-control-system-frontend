@@ -35,10 +35,7 @@ const Home = () => {
                   Start Tracking Now
                 </Button>
 
-                <Link
-                  to='/#Features-section'
-                  className='btn btn-outline-success'
-                >
+                <Link to='/login' className='btn btn-outline-success'>
                   Learn More
                 </Link>
               </Col>
@@ -384,9 +381,9 @@ const Home = () => {
                 >
                   <h5>Contact Us</h5>
                   <ul className='list-unstyled'>
-                    <li>Email: support@traintrack.com</li>
-                    <li>Phone: +123 456 7890</li>
-                    <li>Address: 123 Train Lane, Railtown</li>
+                    <li>Email: Ravanadev@gmail.com</li>
+                    <li>Phone: +94711595173</li>
+                    <li>Sarasavi Madura,Pitipana,Homagama</li>
                   </ul>
                 </Col>
               </Row>

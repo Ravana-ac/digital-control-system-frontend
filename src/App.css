@@ -235,3 +235,28 @@ body {
   font-size: 30px;
   font-weight: bold;
 }
+
+.dashboard-container {
+  padding-top: 50px;
+}
+
+.dashboard-container h1 {
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+.traincart-section {
+  border: 1px solid #cbcbcb;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+
+}
+
+.beautiful-border {
+  border: 1px solid #cbcbcb;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}

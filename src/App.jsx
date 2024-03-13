@@ -6,6 +6,7 @@ import Train from './components/Train'
 import Singup from './components/Singup'
 import Login from './components/Login'
 import { AuthProvider } from './contexts/AuthContext'
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/train' element={<Train />} />
           <Route path='/signup' element={<Singup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </Router>
     </AuthProvider>
