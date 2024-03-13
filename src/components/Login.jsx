@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Container, Form, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../App.css'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function Login() {
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const { login } = useAuth()
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    e.preventDefault()
+    try {
+      await login(email, password)
+      console.log('Login success')
+    } catch (error) {
+      console.error('Failed to login', error)
+    }
+  }
+
   return (
     <>
       <Container
@@ -17,14 +36,18 @@ export default function Login() {
               <Form>
                 <Form.Group id='email'>
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type='email' required />
+                  <Form.Control type='email' ref={emailRef} required />
                 </Form.Group>
                 <Form.Group id='password'>
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type='password' required />
+                  <Form.Control type='password' ref={passwordRef} required />
                 </Form.Group>
 
-                <Button className='w-100 mt-4 custom-btn' type='submit'>
+                <Button
+                  className='w-100 mt-4 custom-btn'
+                  type='submit'
+                  onClick={handleLogin}
+                >
                   Log In
                 </Button>
               </Form>
