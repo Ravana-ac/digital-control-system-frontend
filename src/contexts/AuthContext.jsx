@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import axios from 'axios'
+import { jwtDecode } from 'jwt-decode'
 
 const AuthContext = createContext()
 
@@ -9,21 +10,26 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null)
+  const [loggedIn, setLoggedIn] = useState(false)
   const [loading, setLoading] = useState(true)
 
   const login = async (email, password) => {
     const response = await axios.post('/auth/login', { email, password })
-    console.log(response)
+    if (!response.data.token) {
+      throw new Error('Login faild')
+    }
     const token = response.data.token
-    localStorage.setItem('token', token)
-    // Here, you should decode the JWT and set the user details
-    // For simplicity, we'll just set the token as the current user
-    setCurrentUser(token)
+    const decodedToken = jwtDecode(token)
+
+    localStorage.setItem('TOKEN', token)
+    setLoggedIn(true)
+    setCurrentUser(decodedToken.username)
   }
 
   const logout = () => {
-    localStorage.removeItem('token')
+    localStorage.removeItem('TOKEN')
     setCurrentUser(null)
+    setLoggedIn(false)
   }
 
   useEffect(() => {
@@ -34,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(false)
   }, [])
 
-  const value = { currentUser, login, logout }
+  const value = { currentUser, loggedIn, login, logout }
 
   return (
     <AuthContext.Provider value={value}>
