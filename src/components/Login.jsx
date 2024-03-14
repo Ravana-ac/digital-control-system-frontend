@@ -1,24 +1,33 @@
 import React, { useRef } from 'react'
 import { Container, Form, Button, Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../App.css'
 import { useAuth } from '../contexts/AuthContext'
+import { ToastContainer, toast } from 'react-toastify'
 
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
     const email = emailRef.current.value
     const password = passwordRef.current.value
 
+    if (email === '' || password === '') {
+      toast.error('Enter valid Email or Password')
+      return
+    }
+
     e.preventDefault()
     try {
       await login(email, password)
-      console.log('Login success')
+      toast.success('Login success')
+      navigate('/dashboard')
     } catch (error) {
+      toast.error('Login Faild')
       console.error('Failed to login', error)
     }
   }
@@ -63,6 +72,7 @@ export default function Login() {
             </Card.Body>
           </Card>
         </div>
+        <ToastContainer />
       </Container>
     </>
   )
