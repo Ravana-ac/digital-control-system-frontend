@@ -1,3 +1,3 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'http://149.28.148.239:5000'
