@@ -8,28 +8,26 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 
-const socket = io.connect('http://149.28.148.239:5000', { path: '/socket.io' })
+const socket = io.connect('http://149.28.148.239:5000/', {
+  path: '/socket.io',
+})
 
 const Train = () => {
   const [center, setCenter] = useState([8.06012, 80.273583])
 
   useEffect(() => {
     const sendLocationRequest = () => {
-      socket.emit('location-request', { id: 10 })
+      socket.emit('location-request', { id: '10' })
     }
-
-    const intervalId = setInterval(sendLocationRequest, 5000)
+    setInterval(sendLocationRequest, 5000)
 
     socket.on('receve-message', (msg) => {
-      console.log(msg)
-      const position = [msg.lat, msg.lon]
-      setCenter(position)
+      if (msg) {
+        console.log(msg)
+        const position = [msg.lat, msg.lon]
+        setCenter(position)
+      }
     })
-
-    return () => {
-      clearInterval(intervalId)
-      socket.disconnect()
-    }
   }, [socket, center])
 
   return (

@@ -1,8 +1,40 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import '../App.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 const NavBar = () => {
+  const { loggedIn } = useAuth()
+  const { logout } = useAuth()
+
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
+
+  const loginButton = () => {
+    if (loggedIn) {
+      return (
+        <>
+          <Nav.Link as={Link} to='/dashboard' className='nav-link-custom'>
+            Dashboard
+          </Nav.Link>
+          <Nav.Link onClick={handleLogout} className='nav-link-custom'>
+            Logout
+          </Nav.Link>
+        </>
+      )
+    } else {
+      return (
+        <Nav.Link as={Link} to='/login' className='nav-link-custom'>
+          Login
+        </Nav.Link>
+      )
+    }
+  }
+
   return (
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
@@ -26,6 +58,7 @@ const NavBar = () => {
               <Nav.Link as={Link} to='/track' className='nav-link-custom'>
                 Track
               </Nav.Link>
+              {loginButton()}
             </Nav>
           </Navbar.Collapse>
         </Container>
